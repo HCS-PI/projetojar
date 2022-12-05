@@ -51,7 +51,9 @@ def dadosCPU():
 
 
                 insert_cpu_temperatura(str(tempCPU))
+                inserirTempCPUAws(str(tempCPU))
         insert_cpu_consumo(str(consumoCPU))
+        inserirConsumoCPUAws(str(consumoCPU))
 
     elif platform.system() != 'Linux' and crawler:
         with PoolManager() as pool:
@@ -68,8 +70,8 @@ def dadosCPU():
         insert_cpu_consumo(str(consumoCPU))
         insert_cpu_temperatura(str(temperaturaSimulada))
 
-    inserirTempCPUAws(str(temperaturaSimulada))
-    inserirConsumoCPUAws(str(consumoCPU))
+        inserirTempCPUAws(str(temperaturaSimulada))
+        inserirConsumoCPUAws(str(consumoCPU))
 
 
 def dadosDisco():
