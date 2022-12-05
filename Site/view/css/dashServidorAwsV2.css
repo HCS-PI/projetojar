@@ -1,0 +1,397 @@
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background-color: yellow;
+    background-image: url(../assets/img/loginBackground2.jpg);
+    width: 100%;
+}
+
+.header {
+    position: sticky;
+    width: 100%;
+    height: 6rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+}
+
+.header h3 {
+    background-color: slategray;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.header1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header img {
+    height: 6rem;
+    transition: 400ms;
+}
+
+.header img:hover {
+    -webkit-filter: drop-shadow(0px 0px 10px #222);
+    filter: drop-shadow(0px 0px 5px 5px #222);
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.titulo h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(163, 163, 163, 0.527);
+    width: 40%;
+    border-radius: 10px;
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.div_options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    margin: 0.5%;
+    width: 93%;
+    border-radius: 10px;
+    background-color: rgba(163, 163, 163, 0.527);
+    height: 130px;
+    margin-bottom: 2%;
+}
+.div_buttons_informacoes_hardware{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 80px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.div_buttons_informacoes_hardware:hover {
+    cursor: pointer;
+    background: aliceblue;
+}
+.div_info_CPU {
+    display: flex;
+    flex-direction: row;
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    margin: 0.5%;
+    width: 93%;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(163, 163, 163, 0.527);
+    height: 420px;
+}
+
+.div_info_CPU .div_graficoTempCPU canvas {
+    position: relative;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 10px;
+    height: 400px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.div_graficoTempCPU{
+    display: flex;
+    width: auto;
+    margin:auto;
+}
+
+.labels_statusCPU {
+    font-weight: bold;
+    font-size: 28px;
+    color: black;
+    margin:auto;
+    justify-content: space-evenly;
+    align-items:flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 38%;
+    height: 400px;
+}
+
+.info_temp_CPU{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center; 
+    border-radius: 10px;   
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    height: 45%; 
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+.info_temp_CPU span {
+    margin-left: 3%;
+}
+
+.info_consumo_CPU{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center; 
+    border-radius: 10px;   
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    height: 45%; 
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.info_consumo_CPU span {
+    margin-left: 3%;
+}
+
+
+.div_info_RAM {
+    display: flex;
+    flex-direction: row;
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    margin: 0.5%;
+    width: 93%;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(163, 163, 163, 0.527);
+    height: 420px;
+}
+
+.div_info_RAM .div_grafConsumoRAM canvas {
+    position: relative;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 10px;
+    height: 400px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.div_grafConsumoRAM{
+    display: flex;
+    width: auto;
+    margin:auto;
+}
+
+.labels_statusRAM {
+    font-weight: bold;
+    font-size: 28px;
+    color: black;
+    margin:auto;
+    justify-content: space-evenly;
+    align-items:flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 38%;
+    height: 400px;
+}
+
+.info_temp_RAM{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center; 
+    border-radius: 10px;   
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    height: 45%; 
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+.info_temp_RAM span {
+    margin-left: 3%;
+}
+
+.info_consumo_RAM{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center; 
+    border-radius: 10px;   
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    height: 95%; 
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.info_consumo_RAM span {
+    margin-left: 3%;
+}
+
+
+
+.div_info_DISCO {
+    display: flex;
+    flex-direction: row;
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    margin: 0.5%;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    background-color: rgba(163, 163, 163, 0.527);
+    height: 420px;
+}
+
+.div_info_DISCO .div_grafConsumoDISCO canvas {
+    position: relative;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 10px;
+    height: 400px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.div_grafConsumoDISCO{
+    display: flex;
+    width: auto;
+    margin:auto;
+}
+
+.labels_statusDISCO {
+    font-weight: bold;
+    font-size: 28px;
+    color: black;
+    margin:auto;
+    justify-content: space-evenly;
+    align-items:flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 400px;
+}
+
+
+
+.info_consumo_DISCO{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center; 
+    border-radius: 10px;   
+    /* background-color: rgb(255, 255, 255); */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    height: 95%; 
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.info_consumo_DISCO span {
+    margin-left: 3%;
+}
+
+
+
+
+
+/* @media screen and (max-width: 800px) {
+    html{
+        width: 120%;
+    }
+    .titulo h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(163, 163, 163, 0.527);
+        width: 70%;
+        border-radius: 10px;
+    }
+    .graficos {
+        display: flex;
+        flex-direction: column;; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .graficosCPU {
+        display: flex;
+        flex-direction: column;; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .grafico1 {
+        width: 50%;
+        background-color: rgba(0, 102, 255, 0.220);
+    }
+    
+    .grafico2 {
+        width: 50%;
+        background-color: rgba(0, 255, 149, 0.220);
+    }
+    .grafico3 {
+        width: 33.3%;
+        background-color: rgba(137, 43, 226, 0.220);
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    html{
+        width: 130%;
+    }
+    .titulo h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(163, 163, 163, 0.527);
+        width: 70%;
+        border-radius: 10px;
+    }
+    .graficos {
+        display: flex;
+        flex-direction: column;; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .graficosCPU {
+        display: flex;
+        flex-direction: column;; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .grafico1 {
+        width: 50%;
+        background-color: rgba(0, 102, 255, 0.220);
+    }
+    
+    .grafico2 {
+        width: 50%;
+        background-color: rgba(0, 255, 149, 0.220);
+    }
+    .grafico3 {
+        width: 33.3%;
+        background-color: rgba(137, 43, 226, 0.220);
+    }
+    
+} */

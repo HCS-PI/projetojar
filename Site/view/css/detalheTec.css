@@ -1,0 +1,539 @@
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background-color: yellow;
+    background-image: url(../assets/img/loginBackground2.jpg);
+    background: #a3a3a386;
+}
+
+img {
+    width: 12rem;
+}
+
+.corpo {
+    display: flex;
+    flex-direction: column;
+    height: 165vh;
+    width: 100%;
+    background: #a3a3a386;
+}
+
+.menu {
+    background: #6c6b6b86;
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    display: none;
+}
+
+.tituloCarro {
+    text-align: center;
+    font-size: 22px;
+    box-shadow: 0px 20px 20px -15px #43434386;
+
+}
+
+.infoCarro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 90%;
+    border-top: 10px;
+}
+
+.tipoCarro {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffffcb;
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 10px 0px #2F3B47;
+}
+
+.tipoCarro img {
+    width: 15%;
+}
+
+.tipoCarro .info {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-bottom: 5%;
+    font-weight: bold;
+
+}
+
+.tipoCarro .imgCard {
+    width: 35%;
+}
+
+.tipoComponente {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    padding: 1%;
+    background: #ffffffcb;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 20px;
+
+    box-shadow: 0px 0px 10px 0px #2F3B47;
+}
+
+.tipoComponente .imgCard {
+    width: 35%;
+}
+
+.graficos {
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.grafLinhas {
+    height: 70vh;
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1%;
+}
+
+
+.grafico1,
+.grafico2 {
+    background: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #2F3B47;
+    padding: 3%;
+
+}
+
+.graficoBarraRAM,
+.graficoBarraCpu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.graficoRAM,
+.graficoCPU {
+    height: 100%;
+    width: 36rem;
+}
+
+.grafPiz {
+    height: 90vh;
+    width: 95vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.grafico3 {
+    background: rgb(255, 255, 255);
+    height: 42%;
+    width: 98%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #2F3B47;
+
+}
+
+.grafico4 {
+    background: rgb(255, 255, 255);
+    height: 42%;
+    width: 95%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #2F3B47;
+
+}
+
+.graficoPieProcessos,
+.graficoPieCpu {
+
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-content: center;
+    
+
+}
+
+.graficoPieProcessos{
+    padding: 6%;
+}
+
+.graficoPizza {
+    width: 16rem;
+}
+
+.graficoPizzaCPU {
+    width: 20rem;
+}
+
+@media (min-width: 520px) {
+
+    body {
+        margin: 0;
+        font-family: 'Tajawal', sans-serif;
+        background-color: yellow;
+        background-image: url(../assets/img/loginBackground2.jpg);
+    }
+
+    .corpo {
+        display: flex;
+        flex-direction: row;
+        height: 90vh;
+        background: #a3a3a386;
+    }
+
+    .menu {
+        background: #6c6b6b86;
+        display: flex;
+        flex-direction: column;
+        width: 24%;
+    }
+
+
+    .tituloCarro {
+        text-align: center;
+        font-size: 22px;
+        box-shadow: 0px 20px 20px -15px #43434386;
+
+    }
+
+    .infoCarro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 90%;
+        border-top: 10px;
+    }
+
+    .tipoCarro {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #ffffffcb;
+        border-radius: 15px;
+
+        box-shadow: 0px 0px 20px 0px #2F3B47;
+    }
+
+    .tipoCarro img {
+        width: 15%;
+    }
+
+    .tipoCarro .info {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-evenly;
+        text-align: center;
+        padding-bottom: 5%;
+        font-weight: bold;
+
+    }
+
+    .tipoCarro .imgCard {
+        width: 35%;
+    }
+
+    .tipoComponente {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 60%;
+        padding: 1%;
+        background: #ffffffcb;
+        border-radius: 15px;
+        font-weight: bold;
+        font-size: 20px;
+
+        box-shadow: 0px 0px 20px 0px #2F3B47;
+    }
+
+    .tipoComponente .imgCard {
+        width: 35%;
+    }
+
+    .graficos {
+
+        height: 90vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .grafLinhas,
+    .grafPiz {
+        height: 40vh;
+        width: 75vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .grafico1,
+    .grafico2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(255, 255, 255);
+        width: 43%;
+        
+        height: 80%;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px 0px #2F3B47;
+
+    }
+
+    .graficoBarraRAM,
+    .graficoBarraCpu {
+        width: 35vw;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 2%;
+    }
+
+    .graficoRAM,
+    .graficoCPU {
+        height: 100%;
+        width: 50rem;
+    }
+
+    .grafico3,
+    .grafico4 {
+        background: rgb(255, 255, 255);
+        width: 49%;
+        height: 100%;
+        border-radius: 22px;
+        box-shadow: 0px 0px 20px 0px #2F3B47;
+    }
+
+    .graficoPieProcessos,
+    .graficoPieCpu {
+
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+
+    .graficoPizza {
+        width: 15rem;
+    }
+
+    .graficoPizzaCPU {
+        width: 15rem;
+    }
+
+}
+
+@media (min-width: 820px) {
+
+    img {
+        width: 20rem;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Tajawal', sans-serif;
+        background-color: yellow;
+        background-image: url(../assets/img/loginBackground2.jpg);
+    }
+
+    .corpo {
+        display: flex;
+        flex-direction: row;
+        height: 102vh;
+        background: #a3a3a386;
+    }
+
+    .menu {
+        background: #6c6b6b86;
+        display: flex;
+        flex-direction: column;
+        width: 24%;
+    }
+
+
+    .tituloCarro {
+        text-align: center;
+        font-size: 22px;
+        box-shadow: 0px 20px 20px -15px #43434386;
+
+    }
+
+    .infoCarro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 90%;
+        border-top: 10px;
+    }
+
+    .tipoCarro {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #ffffffcb;
+        border-radius: 15px;
+
+        box-shadow: 0px 0px 20px 0px #2F3B47;
+    }
+
+    .tipoCarro img {
+        width: 15%;
+    }
+
+    .tipoCarro .info {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-evenly;
+        text-align: center;
+        padding-bottom: 5%;
+        font-weight: bold;
+
+    }
+
+    .tipoCarro .imgCard {
+        width: 35%;
+    }
+
+    .tipoComponente {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 60%;
+        padding: 1%;
+        background: #ffffffcb;
+        border-radius: 15px;
+        font-weight: bold;
+        font-size: 20px;
+
+        box-shadow: 0px 0px 20px 0px #2F3B47;
+    }
+
+    .tipoComponente .imgCard {
+        width: 35%;
+    }
+
+    .graficos {
+
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .grafLinhas,
+    .grafPiz {
+        height: 40vh;
+        width: 75vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .grafico1,
+    .grafico2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(255, 255, 255);
+        width: 43%;
+        height: 80%;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px 0px #2F3B47;
+
+    }
+
+    .graficoBarraRAM,
+    .graficoBarraCpu {
+        width: 35vw;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 2%;
+    }
+
+    .graficoRAM,
+    .graficoCPU {
+        height: 100%;
+        width: 50rem;
+    }
+
+    .grafico3,
+    .grafico4 {
+        background: rgb(255, 255, 255);
+        width: 49%;
+        height: 100%;
+        border-radius: 22px;
+        box-shadow: 0px 0px 20px 0px #2F3B47;
+    }
+
+    .graficoPieProcessos,
+    .graficoPieCpu {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        align-content: center;
+        padding:  1%;
+    }
+
+
+    .graficoPizza {
+        width: 19rem;
+    }
+
+    .graficoPizzaCPU {
+        width: 18rem;
+    }
+}

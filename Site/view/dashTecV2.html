@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashTEC.css" />
+    <link rel="stylesheet" href="css/detalheTec.css" />
+    <title>Carro</title>
+  </head>
+
+  <body onload="verCarro(), graficosLine(), graficoPie()">
+    <div class="header">
+      <h3>Técnica</h3>
+      <a href="dashTEC.html">
+        <h3>Voltar</h3>
+      </a>
+      <div class="header1">
+        <img src="assets/img/hcs2.png" />
+      </div>
+    </div>
+
+    <div class="titulo">
+      <h2>Monitoramento</h2>
+    </div>
+    <div class="corpo">
+      <div class="menu">
+        <div class="tituloCarro">
+          <h2>Carro</h2>
+        </div>
+        <div class="infoCarro">
+          <div class="tipoCarro">
+            <img
+              class="imgCard"
+              src="https://cdn-icons-png.flaticon.com/512/68/68321.png"
+              alt=""
+            />
+            <div class="info">
+              <span id="modeloCarro">Model sy </span>
+
+              <span id="placaCarro">AWG6731</span>
+            </div>
+          </div>
+          <div class="tipoComponente" id="cpu">
+            <img
+              class="imgCard"
+              src="https://img.freepik.com/free-icon/cpu_318-932062.jpg?w=2000"
+              alt=""
+            />
+            <span class="valorComp" id="valCPU">Uso%</span>
+          </div>
+          <div class="tipoComponente" id="ram">
+            <img
+              class="imgCard"
+              src="https://www.freeiconspng.com/uploads/ram-icon-png-11.png"
+              alt=""
+            />
+            <span class="valorComp" id="valRam">Uso%</span>
+          </div>
+
+          <div class="tipoComponente" id="temp">
+            <img
+              class="imgCard"
+              src="https://cdn-icons-png.flaticon.com/512/4158/4158502.png"
+              alt=""
+            />
+            <span class="valorComp" id="valTemp">temp%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- corpo -->
+
+      <div class="graficos">
+        <div class="grafLinhas">
+          <div class="grafico1">
+            <div class="graficoBarraRAM" id="graficoBarraRAM">
+              <canvas id="grafico1" class="graficoRAM"></canvas>
+            </div>
+          </div>
+
+          <div class="grafico2">
+            <div class="graficoBarraCpu" id="graficoBarraCpu">
+              <canvas id="grafico2" class="graficoCPU"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="grafPiz">
+          <div class="grafico3">
+            <div class="graficoPieProcessos" id="graficoPieProcessos">
+              <canvas id="grafico3" class="graficoPizza"></canvas>
+            </div>
+          </div>
+          <div class="grafico4">
+            <div class="graficoPieCpu" id="graficoPieCpu">
+              <canvas id="grafico4" class="graficoPizzaCPU"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="js/dashTEC.js"></script>
+<script src="js/detalhesTEC.js"></script>
+<!-- Graficos -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>

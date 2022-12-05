@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/dashTEC.css" />
+    <link rel="stylesheet" href="css/detalheTec.css" />
+    <title>Carro</title>
+  </head>
+
+  <body onload="gerarGraf()">
+    <div class="header">
+      <h3>Técnica</h3>
+      <a href="index.html">
+        <h3>Voltar</h3>
+      </a>
+      <div class="header1">
+        <img src="assets/img/hcs2.png" />
+      </div>
+    </div>
+
+    <div class="titulo">
+      <h2>Monitoramento</h2>
+    </div>
+    <div class="corpo">
+      <div class="menu">
+        <div class="tituloCarro">
+          <h2>Carro</h2>
+        </div>
+        <div class="infoCarro">
+          <div class="tipoCarro">
+            <img
+              class="imgCard"
+              src="https://cdn-icons-png.flaticon.com/512/68/68321.png"
+              alt=""
+            />
+            <div class="info">
+              <span id="modelo">Model S </span>
+
+              <span id="placaCarro">AWG6731</span>
+            </div>
+          </div>
+          <div class="tipoComponente">
+            <img
+              class="imgCard"
+              src="https://img.freepik.com/free-icon/cpu_318-932062.jpg?w=2000"
+              alt=""
+            />
+            <span class="valorComp" id="valCPU">Uso%</span>
+          </div>
+          <div class="tipoComponente">
+            <img
+              class="imgCard"
+              src="https://www.freeiconspng.com/uploads/ram-icon-png-11.png"
+              alt=""
+            />
+            <span class="valorComp" id="valRam">Uso%</span>
+          </div>
+
+          <div class="tipoComponente">
+            <img
+              class="imgCard"
+              src="https://cdn-icons-png.flaticon.com/512/4158/4158502.png"
+              alt=""
+            />
+            <span class="valorComp" id="valDisk">temp%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- corpo -->
+
+      <div class="graficos">
+        <div class="grafLinhas">
+          <div class="grafico1">
+            <div class="graficoBarraRAM" id="graficoBarraRAM">
+              <canvas id="grafico1" class="graficoRAM"></canvas>
+            </div>
+          </div>
+
+          <div class="grafico2">
+            <div class="graficoBarraCpu" id="graficoBarraCpu">
+              <canvas id="grafico2" class="graficoCPU"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="grafPiz">
+          <div class="grafico3">
+            <div class="graficoPieProcessos" id="graficoPieProcessos">
+              <canvas id="grafico3" class="graficoPizza"></canvas>
+            </div>
+          </div>
+          <div class="grafico4">
+            <div class="graficoPieCpu" id="graficoPieCpu">
+              <div id="cloud" style="width: 100%; height: 40vh"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- <script src="js/dashTEC.js"></script>
+<script src="js/detalhesTEC.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+<script>
+  function graficoDispRam() {
+    document.getElementById("grafico1").remove();
+    var divGrafico = document.getElementById("graficoBarraRAM");
+    var canvas = document.createElement("canvas");
+    canvas.id = "grafico1";
+    canvas.className = "graficoRAM";
+    divGrafico.appendChild(canvas);
+
+    var dados = {
+      labels: ["18:30", "18:50", "19:00", "19:20", "19:50", "20:00"],
+      datasets: [
+        {
+          yAxisID: "y-usoRam",
+          label: "Ram(%)",
+          lineTension: 0.3,
+          backgroundColor: "rgba(78, 115, 223, 0.5)",
+          borderColor: "rgba(78, 115, 223, 1)",
+          data: [67, 45, 87, 76, 20, 87],
+          fill: true,
+        },
+      ],
+      options: {
+        maintainAspectRatio: false,
+        responsive: false,
+      },
+    };
+
+    const config = {
+      type: "line",
+      data: dados,
+      options: {
+        maintainAspectRatio: false,
+        responsive: false,
+        animation: 1,
+      },
+    };
+
+    let myChartCpu = new Chart(document.getElementById("grafico1"), config);
+  }
+
+  function graficoDispCpu() {
+    document.getElementById("grafico2").remove();
+    var divGrafico = document.getElementById("graficoBarraCpu");
+    var canvas = document.createElement("canvas");
+    canvas.id = "grafico2";
+    canvas.className = "graficoCPU";
+    divGrafico.appendChild(canvas);
+    var dados = {
+      labels: ["18:30", "18:50", "19:00", "19:20", "19:50", "20:00"],
+      datasets: [
+        {
+          yAxisID: "y-usoCpu",
+          label: "Uso Cpu(%)",
+          lineTension: 0.3,
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          borderColor: "rgba(92, 925, 183, 1.5)",
+          data: [44, 30, 30, 25, 80, 20],
+          fill: true,
+        },
+        {
+          yAxisID: "y-Temperatura-cpu",
+          label: "Temperatura(°C)",
+          lineTension: 0.3,
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          borderColor: "rgba(250, 5, 35, 0.94)",
+          data: [40, 60, 30, 20, 90, 20],
+          fill: true,
+        },
+      ],
+      options: {
+        maintainAspectRatio: false,
+        responsive: false,
+      },
+    };
+
+    const config = {
+      type: "line",
+      data: dados,
+      options: {
+        maintainAspectRatio: false,
+        responsive: false,
+        animation: 1,
+      },
+    };
+
+    let myChartCpu = new Chart(document.getElementById("grafico2"), config);
+  }
+
+  function verProcesso() {
+    document.getElementById("grafico3").remove();
+    var divGrafico = document.getElementById("graficoPieProcessos");
+    var canvas = document.createElement("canvas");
+    canvas.id = "grafico3";
+    canvas.className = "graficoPizza";
+    divGrafico.appendChild(canvas);
+
+    const data = {
+      labels: ["VSCode", "Chrome", "Spotify", "Word", "Files"],
+      datasets: [
+        {
+          label: "Uso CPU(%)",
+          backgroundColor: [
+            "#06D6A0",
+            "#B84A62",
+            "#0378b4",
+            "#F34CA1",
+            "#B62D11",
+          ],
+          borderColor: "none",
+          data: [30, 10, 15, 6, 7],
+        },
+      ],
+    };
+
+    const config = {
+      type: "pie",
+      data: data,
+      options: {
+        responsive: false,
+        animation: 0,
+        plugins: {
+          legend: {
+            position: "right",
+          },
+          title: {
+            display: true,
+            text: "Processos",
+          },
+        },
+      },
+    };
+
+    let myChartCpu = new Chart(document.getElementById("grafico3"), config);
+  }
+
+  function clou() {
+    anychart.onDocumentReady(function () {
+      var data = [
+        { x: "learning", value: 80 },
+        { x: "includes", value: 56 },
+        { x: "lists", value: 44 },
+        { x: "meaning", value: 40 },
+        { x: "useful", value: 36 },
+        { x: "different", value: 32 },
+      ];
+
+      // create a chart and set the data
+      chart = anychart.tagCloud(data);
+      // set the container id
+      chart.container("cloud");
+      // initiate drawing the chart
+      chart.draw();
+    });
+  }
+
+  function gerarGraf() {
+    verProcesso(), graficoDispCpu(), graficoDispRam(), clou();
+  }
+</script>

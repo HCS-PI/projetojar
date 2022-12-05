@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashServidorAwsV2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="assets/img/hcs.ico" type="image/x-icon" rel="icon" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard de Gestão Servidor AWS - HCS</title>
+</head>
+
+<body>
+    <div class="header">
+        <h3>Gestão</h3>
+
+        <a href="index.html">
+            <h3>Voltar</h3>
+        </a>
+        <div class="header1">
+            <img src="assets/img/hcs2.png">
+        </div>
+
+
+    </div>
+    <div class="titulo">
+        <h2>Visão Geral AWS - CPU, RAM e Disco</h2>
+    </div>
+    <div class="main">
+        <div class="div_options">
+            <div class="div_buttons_informacoes_hardware" onclick="mostrarDadosCPU()">
+                <img src="assets/img/cpu-icon.png" height="64px" alt="">
+                <span style="font-size: larger; font-weight: bold;">INFORMAÇÕES DO PROCESSADOR</span>
+            </div>
+            <div class="div_buttons_informacoes_hardware" onclick="mostrarDadosRAM()">
+                <img src="assets/img/ram-icon.png" height="64px" alt="">
+                <span style="font-size: larger; font-weight: bold;">INFORMAÇÕES DA MEMÓRIA RAM</span>
+            </div>
+            <div class="div_buttons_informacoes_hardware" onclick="mostrarDadosDISCO()">
+                <img src="assets/img/hdd-icon.png" height="50px" alt="">
+                <span style="font-size: larger; font-weight: bold;">INFORMAÇÕES DO DISCO</span>
+            </div>
+        </div>
+        <div class="div_info_CPU" id="div_info_CPU">
+            <div class="div_graficoTempCPU" id="div_grafTemperaturaCPU">
+                <canvas id="graficoCPU"></canvas>
+            </div>
+            <div class="labels_statusCPU">
+                <div class="info_temp_CPU">
+
+                    <div style="display: flex;flex-direction: column;">
+                        <span>Temperatura da CPU: <span id="spnTemperaturaCPU">38,8 °C</span></span>
+                    </div>
+                    <div style="display: flex;flex-direction: column;">
+                        <span>Status: <span>Normal</span></span>
+                    </div>
+                </div>
+                <div class="info_consumo_CPU""> 
+                        
+                        <div style=" display: flex;flex-direction: column;">
+                    <span>Consumo da CPU: <span id="spnConsumoCPU">38,8 %</span></span>
+                </div>
+                <div style="display: flex;flex-direction: column;">
+                    <span>Status: <span>Normal</span></span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="div_info_RAM" id="div_info_RAM">
+        <div class="div_grafConsumoRAM" id="div_grafConsumoRAM">
+            <canvas id="graficoConsumoRAM"></canvas>
+        </div>
+        <div class="labels_statusRAM">
+
+            <div class="info_consumo_RAM"">         
+                
+                <span>Consumo de RAM: <span id="spnConsumoRAM">38,8 %</span></span>
+                <span>Status: <span>Normal</span></span>
+
+                <span>Capacidade Total: <span id="spnEspacoTotal">20.0 Gb</span></span>
+                <span>Espaço Utilizado: <span id="spnEspacoUsado">14.0 Gb</span></span>
+                <span>Espaço Disponível: <span id="spnEspacoDisponivel">6.0 Gb</span></span>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="div_info_DISCO" id="div_info_DISCO">
+        <div class="div_grafConsumoDISCO" id="div_grafConsumoDISCO">
+            <canvas id="graficoConsumoDISCO"></canvas>
+        </div>
+        <div class="labels_statusDISCO">
+
+            <div class="info_consumo_DISCO"">         
+
+                <span>Consumo de DISCO: <span id="spnConsumoDISCO">38,8 %</span></span>
+                <span>Status: <span>Normal</span></span>
+
+                <span>Capacidade Total: <span id="spnEspacoTotal">20.0 Gb</span></span>
+                <span>Espaço Utilizado: <span id="spnEspacoUsado">14.0 Gb</span></span>
+                <span>Espaço Disponível: <span id="spnEspacoDisponivel">6.0 Gb</span></span>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</div>
+</body>
+
+</html>
+<script src="js/dashServidorAwsV2.js"></script>
