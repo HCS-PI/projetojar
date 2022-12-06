@@ -51,8 +51,8 @@ def dadosCPU():
 
 
         insert_cpu_temperatura(str(temperaturaSimulada))
-        inserirTempCPUAws(str(temperaturaSimulada))
         insert_cpu_consumo(str(consumoCPU))
+        inserirTempCPUAws(str(temperaturaSimulada))
         inserirConsumoCPUAws(str(consumoCPU))
 
     elif platform.system() != 'Linux' and crawler:
@@ -95,12 +95,14 @@ def transformarEmCsv():
     nomeProcesso = []
 
     for nome in resultado:
-        nomeProcesso.append(nome)
-
-    dic = {"Nome": nomeProcesso}
+        nomeProcesso.append(nome[0].replace(".exe", ""))
+        
+    
+        
+    dic = {" ": nomeProcesso}
     df = pd.DataFrame(dic)
-    df.to_csv("DadosColetados"+str(dt.date.today())+".csv")
-
+    print(df)
+    df = df.to_csv("DadosColetados"+str(dt.date.today())+".csv")
 
 def ApertarBotao3():
     cursor = conexao.cursor()
@@ -111,7 +113,7 @@ def ApertarBotao3():
     cursor.close()
 
     cursor = conexao.cursor()
-    sql = "SELECT valor FROM Medida, Dispositivo where tipo = 'CPU' AND unid_medida = '%'  AND fk_dispositivo = id_dispositivo AND fk_servidor_aws = 1 order by id_medida desc;"
+    sql = "SELECT TOP 100 valor FROM Medida, Dispositivo where tipo = 'CPU' AND unid_medida = '%'  AND fk_dispositivo = id_dispositivo AND fk_servidor_aws = 1 order by id_medida desc;"
     cursor.execute(sql)
 
     resultadoCpu = cursor.fetchall()
@@ -164,11 +166,13 @@ def ApertarBotao2():
     transformarEmCsv()
 
     leitura = pd.read_csv("DadosColetados"+str(dt.date.today())+".csv")
-    leitura = leitura.drop("Unnamed: 0", axis=1)
+    leitura.drop('Unnamed: 0', axis=1, inplace=True)
+
+    
 
     wc = WordCloud(background_color="white",
                    max_words=1000, width=800, height=400)
-    print(str(leitura))
+    #print(str(leitura))
     wc.generate(str(leitura))
     plt.imshow(wc)
     plt.axis("off")
