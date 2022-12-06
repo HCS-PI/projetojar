@@ -87,15 +87,14 @@ def exibir():
     
 
 def transformarEmCsv():
-    cursor = conexao.cursor()
-    sql = "SELECT nome  FROM processo WHERE fk_carro = 4 ;"
-    cursor.execute(sql)
 
-    resultado = cursor.fetchall()
     nomeProcesso = []
+    for processo in psutil.process_iter():
+                info_processo = processo.as_dict(attrs=['name'])
+     
+                nomeProcesso.append(str(info_processo['name'].replace(".exe", "")))
 
-    for nome in resultado:
-        nomeProcesso.append(nome[0].replace(".exe", ""))
+
         
     
         
@@ -103,7 +102,7 @@ def transformarEmCsv():
     df = pd.DataFrame(dic)
     print(df)
     df = df.to_csv("DadosColetados"+str(dt.date.today())+".csv")
-
+    
 def ApertarBotao3():
     cursor = conexao.cursor()
     sql = "SELECT TOP 100 valor FROM Medida, Dispositivo where tipo = 'RAM' AND fk_dispositivo = id_dispositivo  AND fk_servidor_aws = 1 order by id_medida desc;"

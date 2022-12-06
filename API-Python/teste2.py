@@ -1,5 +1,11 @@
-
 import psutil
-while True:
-    temps = psutil.sensors_temperatures()
-    print(temps)
+
+resultado = psutil.process_iter(['name'])
+
+for proc in psutil.process_iter():
+                cpu_percent = proc.cpu_percent()
+                info = proc.as_dict(attrs=['name'])
+     
+                dados = info['name']
+                print(dados)
+                 
