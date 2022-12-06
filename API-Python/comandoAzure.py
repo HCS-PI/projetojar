@@ -14,7 +14,7 @@ def select(query):
 
 
 enderecoMac = getmac.get_mac_address()
-enderecoMac = ' C2-F2-9F-2A-F9-7C'
+enderecoMac = 'C2-F2-9F-2A-F9-7C'
 idCarro = select(
     "select id_carro from Carro where endereco_mac = '" + str(enderecoMac) + "' ;")
 
