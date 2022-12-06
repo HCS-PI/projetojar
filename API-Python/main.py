@@ -50,7 +50,7 @@ def dadosCPU():
                     tempCPU = entry.current
 
 
-                insert_cpu_temperatura(str(tempCPU))
+        insert_cpu_temperatura(str(temperaturaSimulada))
         inserirTempCPUAws(str(temperaturaSimulada))
         insert_cpu_consumo(str(consumoCPU))
         inserirConsumoCPUAws(str(consumoCPU))
