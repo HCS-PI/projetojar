@@ -88,7 +88,7 @@ def exibir():
 
 def transformarEmCsv():
     cursor = conexao.cursor()
-    sql = "SELECT nome  FROM processo;"
+    sql = "SELECT nome  FROM processo WHERE fk_carro = 4 ;"
     cursor.execute(sql)
 
     resultado = cursor.fetchall()
