@@ -40,7 +40,7 @@ def conversor(valor):
 def dadosCPU():
     consumoCPU = psutil.cpu_percent(interval=None)
     crawler = False
-    temperaturaSimulada = consumoCPU + 56.7
+    temperaturaSimulada = consumoCPU * 1.3
 
     if platform.system() == 'Linux':
         temps = psutil.sensors_temperatures()
@@ -51,7 +51,7 @@ def dadosCPU():
 
 
                 insert_cpu_temperatura(str(tempCPU))
-                inserirTempCPUAws(str(tempCPU))
+                inserirTempCPUAws(str(temperaturaSimulada))
         insert_cpu_consumo(str(consumoCPU))
         inserirConsumoCPUAws(str(consumoCPU))
 
