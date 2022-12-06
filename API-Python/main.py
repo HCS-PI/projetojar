@@ -100,8 +100,8 @@ def transformarEmCsv():
         
     dic = {" ": nomeProcesso}
     df = pd.DataFrame(dic)
-    print(df)
     df = df.to_csv("DadosColetados"+str(dt.date.today())+".csv")
+    
     
 def ApertarBotao3():
     cursor = conexao.cursor()
