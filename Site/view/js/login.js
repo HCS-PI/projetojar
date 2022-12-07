@@ -51,7 +51,10 @@ function entrar() {
 
 
                 setTimeout(function () {
-                    if (json.cargo == "ADM") {
+                    if (json.email == "vinicius.alves@hcs.com") {
+                        window.location = "/dashServidorAwsV2.html";
+                    }
+                    else if (json.cargo == "ADM") {
                         window.location = "/dashADM.html";
                     }
                     else if (json.cargo == "GES") {
