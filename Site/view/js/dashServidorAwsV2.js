@@ -70,6 +70,49 @@ function gerarGraficoCPU() {
         spnTemperaturaCPU.innerHTML = vt_medidasTempCPU[0] + " °C";
         spnConsumoCPU.innerHTML = vt_medidasConsumoCPU[0] + " %";
 
+        if (vt_medidasTempCPU[0] >= 90.0) {
+          spnTemperaturaCPU.style.color= "#e81515"; 
+          spnStatusTempCPU.innerHTML = "Temperatura Crítica!"; 
+          spnStatusTempCPU.style.color= "#e81515"; 
+
+        } else if (vt_medidasTempCPU[0] >= 75.0) {
+          spnTemperaturaCPU.style.color= "#e86d15"; 
+          spnStatusTempCPU.innerHTML = "Temperatura Muito Elevada!"; 
+          spnStatusTempCPU.style.color= "#e86d15"; 
+          
+        } else if (vt_medidasTempCPU[0] >= 65.0) {
+          spnTemperaturaCPU.style.color= "#ffeb33"; 
+          spnStatusTempCPU.innerHTML = "Temperatura Elevada!"; 
+          spnStatusTempCPU.style.color= "#ffeb33"; 
+
+        } else {
+          spnTemperaturaCPU.style.color= "#177834"; 
+          spnStatusTempCPU.innerHTML = "Temperatura Segura (Normal)"; 
+          spnStatusTempCPU.style.color= "#177834"; 
+        }
+
+        if (vt_medidasConsumoCPU[0] >= 90.0) {
+          spnConsumoCPU.style.color= "#e81515"; 
+          spnStatusConsumoCPU.innerHTML = "Consumo Crítico (PERIGO)!"; 
+          spnStatusConsumoCPU.style.color= "#e81515"; 
+
+        } else if (vt_medidasConsumoCPU[0] >= 75.0) {
+          spnConsumoCPU.style.color= "#e86d15"; 
+          spnStatusConsumoCPU.innerHTML = "Consumo Muito Elevado!"; 
+          spnStatusConsumoCPU.style.color= "#e86d15"; 
+          
+        } else if (vt_medidasConsumoCPU[0] >= 65.0) {
+          spnConsumoCPU.style.color= "#ffeb33"; 
+          spnStatusConsumoCPU.innerHTML = "Consumo Elevado!"; 
+          spnStatusConsumoCPU.style.color= "#ffeb33"; 
+
+        } else {
+          spnConsumoCPU.style.color= "#177834"; 
+          spnStatusConsumoCPU.innerHTML = "Consumo Esperado (Normal)"; 
+          spnStatusConsumoCPU.style.color= "#177834"; 
+        }
+
+
         const dataConsumoCPU = [
           vt_dataCPU[4],
           vt_dataCPU[3],
@@ -160,6 +203,35 @@ function gerarGraficoConsumoRAM() {
 
         spnConsumoRAM.innerHTML = vt_medidasConsumoRAM[0] + " %";
 
+        totalRam = 8.0
+        espacoUsadoRam = (totalRam * (vt_medidasConsumoRAM[0]/100)).toFixed(2)
+        espacoDispRAM = (totalRam - espacoUsadoRam).toFixed(2)
+
+        spnEspacoTotalRAM.innerHTML = `${totalRam.toFixed(2)} Gb`
+        spnEspacoUsadoRAM.innerHTML = `${espacoUsadoRam} Gb`
+        spnEspacoDisponivelRAM.innerHTML = `${espacoDispRAM} Gb`
+
+        if (vt_medidasConsumoRAM[0] >= 90.0) {
+          spnConsumoRAM.style.color= "#e81515"; 
+          spnStatusConsumoRAM.innerHTML = "Consumo Crítico (PERIGO)!"; 
+          spnStatusConsumoRAM.style.color= "#e81515"; 
+
+        } else if (vt_medidasConsumoRAM[0] >= 75.0) {
+          spnConsumoRAM.style.color= "#e86d15"; 
+          spnStatusConsumoRAM.innerHTML = "Consumo Muito Elevado!"; 
+          spnStatusConsumoRAM.style.color= "#e86d15"; 
+          
+        } else if (vt_medidasConsumoRAM[0] >= 65.0) {
+          spnConsumoRAM.style.color= "#ffeb33"; 
+          spnStatusConsumoRAM.innerHTML = "Consumo Elevado!"; 
+          spnStatusConsumoRAM.style.color= "#ffeb33"; 
+
+        } else {
+          spnConsumoRAM.style.color= "#177834"; 
+          spnStatusConsumoRAM.innerHTML = "Consumo Esperado (Normal)"; 
+          spnStatusConsumoRAM.style.color= "#177834"; 
+        }
+
         const dataConsumoRAM = [
           vt_dataConsumoRAM[4],
           vt_dataConsumoRAM[3],
@@ -221,6 +293,30 @@ function gerarGraficoConsumoDISCO() {
         div_grafConsumoDISCO.appendChild(novoGraficoConsumoDISCO);
 
         spnConsumoDISCO.innerHTML = `${json[0].ConsumoDisco} %`;
+
+        totalDisco = 20.0
+        espacoUsadoDisco = (totalDisco * (json[0].ConsumoDisco/100)).toFixed(2)
+        espacoDispDisco = (totalDisco - espacoUsadoDisco).toFixed(2)
+
+        spnEspacoTotalDISCO.innerHTML = `${totalDisco.toFixed(2)} Gb`
+        spnEspacoUsadoDISCO.innerHTML = `${espacoUsadoDisco} Gb`
+        spnEspacoDisponivelDISCO.innerHTML = `${espacoDispDisco} Gb`
+
+        if (json[0].ConsumoDisco >= 90.0) {
+          spnConsumoDISCO.style.color= "#e81515"; 
+          spnStatusConsumoDISCO.innerHTML = "Armazenamento Cheio (PERIGO)!"; 
+          spnStatusConsumoDISCO.style.color= "#e81515"; 
+
+        } else if (json[0].ConsumoDisco >= 75.0) {
+          spnConsumoDISCO.style.color= "#ffeb33"; 
+          spnStatusConsumoDISCO.innerHTML = "Armazenamento Quase Cheio!"; 
+          spnStatusConsumoDISCO.style.color= "#ffeb33"; 
+          
+        } else {
+          spnConsumoDISCO.style.color= "#177834"; 
+          spnStatusConsumoDISCO.innerHTML = "Armazenamento Esperado (Normal)"; 
+          spnStatusConsumoDISCO.style.color= "#177834"; 
+        }
 
         const graficoUsoDisco = ["Livre", "Utilizado"];
 

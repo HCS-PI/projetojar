@@ -310,6 +310,17 @@ a {
 }
 
 
+#spnConsumoDISCO,
+#spnStatusConsumoDISCO,
+#spnConsumoRAM,
+#spnStatusConsumoRAM,
+#spnTemperaturaCPU,
+#spnStatusTempCPU,
+#spnConsumoCPU,
+#spnStatusConsumoCPU {
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 1px;
+}
 
 
 
