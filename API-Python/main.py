@@ -195,7 +195,7 @@ def ApertarBotao():
     armzTotalDisco = round((psutil.disk_usage('/')[0]) / (10**9), 2)
     consumoDisco = round((psutil.disk_usage('/')[3]), 2)
 
-    labels = f'Usado - {round(armzTotalDisco * (consumoDisco/100),2)} Gb', f'Disponível - {round(armzTotalDisco - (round(armzTotalDisco * (consumoDisco/100),2)),2)} Gb'
+    labels = f'Usado - {round(armzTotalDisco * (consumoDisco/100),2)} Gb', f'Disponível - {round(armzTotalDisco - ((armzTotalDisco * (consumoDisco/100))),2)} Gb'
     sizes = [consumoDisco,
              round((100-consumoDisco),2)]
     figura = plt.figure(figsize=(2, 3), dpi=100)
