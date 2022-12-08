@@ -1,7 +1,7 @@
 setInterval(() => {
   graficosLine();
   gerarDados();
-}, 1000);
+}, 2500);
 setInterval(() => {
   graficoPie();
 }, 15000);

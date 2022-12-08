@@ -79,7 +79,7 @@ function verCarros() {
           Valor = json[index].Valor;
 
           if (posicaoCarro.includes(index)) {
-            if (problema == "RAM" && Valor > 40.0) {
+            if (problema == "RAM" && Valor > 40.0 && Valor <= 100) {
               if (Valor > 90) {
                 estadoRam = "Critico";
                 critico++;
@@ -101,7 +101,7 @@ function verCarros() {
                                     <div class="estadoCarro">${estadoRam}</div>
                                 </ul>
                             </div>`;
-            } else if (problema == "CPU" && Valor > 40.0) {
+            } else if (problema == "CPU" && Valor > 40.0 && Valor <= 100) {
               if (Valor > 90) {
                 estadoCpu = "Critico";
                 critico++;

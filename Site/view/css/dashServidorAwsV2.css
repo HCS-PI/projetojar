@@ -320,6 +320,7 @@ a {
 #spnStatusConsumoCPU {
     -webkit-text-stroke-color: rgb(0, 0, 0);
     -webkit-text-stroke-width: 1px;
+    font-weight: bolder;
 }
 
 
