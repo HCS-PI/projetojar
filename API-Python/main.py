@@ -192,9 +192,12 @@ def ApertarBotao():
                      background="black", foreground="white")
     textoDash.place(x=200, y=0)
 
-    labels = f'Usado - {round(armzDiscoUsado)} Gb', f'Disponível - {round(armzDiscoDispobivel)} Gb'
-    sizes = [((armzDiscoUsado/armzDiscototal)*100),
-             ((armzDiscoDispobivel/armzDiscototal)*100)]
+    armzTotalDisco = round((psutil.disk_usage('/')[0]) / (10**9), 2)
+    consumoDisco = round((psutil.disk_usage('/')[3]), 2)
+
+    labels = f'Usado - {round(armzTotalDisco * (consumoDisco/100),2)} Gb', f'Disponível - {armzTotalDisco - (round(armzTotalDisco * (consumoDisco/100),2))} Gb'
+    sizes = [consumoDisco,
+             round((100-consumoDisco),2)]
     figura = plt.figure(figsize=(2, 3), dpi=100)
     canva = FigureCanvasTkAgg(figura, janela2)
     canva.get_tk_widget().place(x=310, y=30)
